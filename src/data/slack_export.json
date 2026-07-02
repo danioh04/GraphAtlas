@@ -1,0 +1,72 @@
+[
+  {
+    "client_msg_id": "msg-001",
+    "type": "message",
+    "text": "Has anyone looked at SHOP-503 yet? The staging environment is completely rejecting the Stripe webhooks.",
+    "user": "U04MIKE",
+    "ts": "1720010000.000100",
+    "team": "T02ECOMMERCE",
+    "channel": "C01BACKEND"
+  },
+  {
+    "client_msg_id": "msg-002",
+    "type": "message",
+    "text": "I'm digging into it now. It looks like the `STRIPE_WEBHOOK_SECRET` in the staging AWS Secrets Manager wasn't rotated when we updated the API keys yesterday.",
+    "user": "U05SARAH",
+    "ts": "1720010200.000200",
+    "team": "T02ECOMMERCE",
+    "channel": "C01BACKEND",
+    "thread_ts": "1720010000.000100",
+    "reply_count": 2
+  },
+  {
+    "client_msg_id": "msg-003",
+    "type": "message",
+    "text": "Ah, that makes sense. <@U05SARAH>, make sure you follow the steps in the runbook: https://wiki.ecommerce.internal/spaces/ENG/pages/8821/Secret+Rotation+Protocol",
+    "user": "U06DAVID",
+    "ts": "1720010400.000300",
+    "team": "T02ECOMMERCE",
+    "channel": "C01BACKEND",
+    "thread_ts": "1720010000.000100"
+  },
+  {
+    "client_msg_id": "msg-004",
+    "type": "message",
+    "text": "Fixed. I rotated the secret and triggered a test event from the Stripe CLI. We are getting 200 OKs now. I'll move SHOP-503 to Review.",
+    "user": "U05SARAH",
+    "ts": "1720011000.000400",
+    "team": "T02ECOMMERCE",
+    "channel": "C01BACKEND",
+    "thread_ts": "1720010000.000100"
+  },
+  {
+    "client_msg_id": "msg-005",
+    "type": "message",
+    "text": "URGENT: iOS push notifications are dropping globally. PagerDuty just fired.",
+    "user": "U07EMILY",
+    "ts": "1720012000.000500",
+    "team": "T02ECOMMERCE",
+    "channel": "C02MOBILE"
+  },
+  {
+    "client_msg_id": "msg-006",
+    "type": "message",
+    "text": "I created SHOP-504 to track this. <@U05SARAH>, did the backend team deploy any changes to AWS SNS this morning?",
+    "user": "U07EMILY",
+    "ts": "1720012100.000600",
+    "team": "T02ECOMMERCE",
+    "channel": "C02MOBILE",
+    "thread_ts": "1720012000.000500",
+    "reply_count": 1
+  },
+  {
+    "client_msg_id": "msg-007",
+    "type": "message",
+    "text": "Checking AWS now... yes, the APNs certificates expired at midnight. I'm spinning up SHOP-505 to get them renewed immediately. Give me 15 minutes.",
+    "user": "U05SARAH",
+    "ts": "1720012500.000700",
+    "team": "T02ECOMMERCE",
+    "channel": "C02MOBILE",
+    "thread_ts": "1720012000.000500"
+  }
+]

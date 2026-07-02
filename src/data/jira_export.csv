@@ -1,0 +1,8 @@
+Issue Key,Issue Type,Summary,Assignee,Reporter,Status,Priority,Description,Linked Issues
+SHOP-501,Story,Migrate to Stripe API v3,sarah.backend,david.pm,In Progress,High,"Update the core payment service to use Stripe's new v3 endpoints for the checkout flow.",
+SHOP-502,Task,Update Checkout UI components,mike.frontend,david.pm,To Do,Medium,"Refactor the React components in the cart service to support the new Stripe elements.",Blocked by SHOP-501
+SHOP-503,Bug,Stripe Webhook signature validation failing,sarah.backend,mike.frontend,In Progress,Highest,"We are getting 401 Unauthorized from the Stripe webhook endpoint in staging. Check the Confluence runbook on secret rotation. See Slack #backend-dev.",Blocks SHOP-501
+SHOP-504,Bug,iOS Push Notifications failing on iOS 17,emily.mobile,sarah.backend,Done,Highest,"APNs certificates seem to have expired or mismatched after the last deployment. Users are not getting order confirmation alerts.",
+SHOP-505,Task,Renew APNs Certificates,sarah.backend,emily.mobile,Done,High,"Generate new certs from Apple Developer portal and upload them to AWS SNS. Required to fix the mobile alerts.",Blocks SHOP-504
+SHOP-506,Story,Implement Cart Abandonment Emails,david.pm,sarah.backend,To Do,Low,"Send an automated email to users who leave items in their cart for over 24 hours. Depends on the marketing CRM integration.",
+SHOP-507,Task,Audit Database Indexes for Orders Table,john.dba,sarah.backend,To Do,Medium,"Query times on the orders table have increased by 150ms. We need to audit the Postgres indexes before Black Friday.",
